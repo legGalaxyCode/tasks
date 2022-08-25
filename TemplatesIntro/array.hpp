@@ -4,35 +4,18 @@
 template <typename T>
 class Array {
 public:
-    explicit Array(int sz): size_(sz) {
-        buf_ = new T[size_];
-    }
-    explicit Array(size_t size, const T& value = T()): size_(size) {
-        buf_ = new T[size_];
-        std::fill(buf_, buf_ + size_, value);
-    }
-    Array(const Array&) {
+    explicit Array(int sz) {}
+    explicit Array(size_t size, const T& value = T()) {}
+    Array(const Array&) {}
+    Array& operator=(const Array&) {}
+    ~Array() {}
 
-    }
-    Array& operator=(const Array&) {
+    T& operator[](size_t sz) {}
+    const T& operator[](size_t sz) const {}
 
-    }
-    ~Array() {
-
-    }
-    T& operator[](size_t sz) {
-        return buf_[sz];
-    }
-    const T& operator[](size_t sz) const {
-        return buf_[sz];
-    }
-    size_t size() const {
-        return size_;
-    }
+    size_t Size() const {}
 private:
-    T* buf_;
-    size_t size_;
-    // your code
+    // your code goes here
 };
 
 #endif //_C___ARRAY_H

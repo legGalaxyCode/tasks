@@ -1,11 +1,19 @@
+#include <climits>
+
 #include <gtest/gtest.h>
 
 #include "../array.hpp"
 
 TEST(SizeTest, BasicAssertions) {
-    Array<int> array(4);
-    EXPECT_EQ(array.size(), 4);
-    EXPECT_EQ(sizeof(array), sizeof(int) * 4);
+    Array<int> array(100);
+    try {
+        Array<double> array1(INT_MAX, INT_MAX);
+    } catch (std::exception& e) {
+        std::cout << e.what();
+        EXPECT_EQ(e.what(), "std::bad_alloc");
+    }
+    EXPECT_EQ(array.size(), 100);
+    EXPECT_EQ(sizeof(array), sizeof(int) * 100);
 }
 
 TEST(AccessTest, BasicAssertions) {

@@ -2,8 +2,15 @@ cmake_minimum_required(VERSION 3.23)
 project(tasks)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -g -fno-omit-frame-pointer")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Werror -g -fno-omit-frame-pointer")
 
+find_program(CLANG_TIDY_EXE NAMES clang-tidy)
+if (CLANG_TIDY_EXE)
+    message(STATUS "clang-tidy found: ${CLANG_TIDY_EXE}")
+    set(CMAKE_CXX_CLANG_TIDY "clang-tidy")
+else()
+    message(STATUS "clang-tidy not found.")
+endif()
 #include(cmake/Helpers.cmake)
 
 include(FetchContent)
@@ -16,6 +23,6 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-#include(cmake/Task.cmake)
 add_subdirectory(TemplatesIntro)
 add_subdirectory(VectorWrapper)
+add_subdirectory(ArrayIterator)
