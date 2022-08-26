@@ -1,5 +1,5 @@
-#ifndef _C___ARRAY_H
-#define _C___ARRAY_H
+#ifndef TASKS_ARRAY_H
+#define TASKS_ARRAY_H
 
 template <typename T>
 class Array {
@@ -13,9 +13,9 @@ public:
     T& operator[](size_t sz) {}
     const T& operator[](size_t sz) const {}
 
-    size_t Size() const {}
+    size_t size() const {}
 private:
     // your code goes here
 };
 
-#endif //_C___ARRAY_H
+#endif //TASKS_ARRAY_H

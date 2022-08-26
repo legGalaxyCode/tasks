@@ -6,7 +6,6 @@ class VectorWrapper {
 public:
     // your code goes here
 private:
-    int* buf_;
     // your code goes here
 };
 
