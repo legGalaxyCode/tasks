@@ -1,8 +1,5 @@
 #ifndef FUNC_OVERLOAD_FUNCTION_HPP
 #define FUNC_OVERLOAD_FUNCTION_HPP
-
-#include <iostream>
-
 /**
  * @arg pointer to array, array size, pointer to function
  *

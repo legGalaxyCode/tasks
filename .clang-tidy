@@ -60,6 +60,7 @@ Checks: >
   -google-readability-namespace-comments,
   -google-runtime-references,
   -misc-non-private-member-variables-in-classes,
+  -misc-definitions-in-headers,
   -modernize-return-braced-init-list,
   -modernize-use-trailing-return-type,
   -modernize-avoid-c-arrays,
@@ -75,7 +76,7 @@ Checks: >
   -bugprone-implicit-widening-of-multiplication-result
 
 # Turn all the warnings from the checks above into errors.
-WarningsAsErrors: ""
+WarningsAsErrors: "*"
 
 HeaderFilterRegex: ".hpp$"
 
